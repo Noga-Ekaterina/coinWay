@@ -1,0 +1,170 @@
+@import "../index";
+@import "../UI/hero-block";
+@import "../UI/btn-gradient";
+@import "../UI/you-ready";
+@import "../UI/card";
+      
+.optimized-process{
+   padding-bottom: 124px;
+   
+   &__row{
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 100px;
+
+      @include md {
+         gap: 0;
+         margin-top: 50px;
+      }
+   }
+
+   &__item{
+      box-sizing: border-box;
+      width: 360px;
+      padding: 30px 34px 26px;
+      border-radius: 15px;
+      box-shadow: 0px 10px 25px 0px rgba(0, 184, 132, 0.1);
+
+      &--1{
+         background: linear-gradient(167.94deg, rgb(220, 106, 232) 18.282%,rgb(60, 15, 157) 87.783%,rgb(53, 11, 154) 102.018%);
+      }
+
+      &--2{
+         background: linear-gradient(186.28deg, rgb(220, 106, 232) 11.018%,rgb(60, 15, 157) 77.659%,rgb(53, 11, 154) 91.308%);
+      }
+      
+      &--3{
+         background: linear-gradient(173.97deg, rgb(220, 106, 232) -21.266%,rgb(60, 15, 157) 70.833%,rgb(53, 11, 154) 107.867%);
+      }
+   }
+
+   &__title{
+      font: 24px 'inter' 800;
+      margin-bottom: 10px;
+   }
+}
+
+.invoices-card{
+   padding-inline: 50px 15px;
+
+   &__row{
+      display: flex;
+      justify-content: space-between;
+      row-gap: 70px;
+      column-gap: 30px;
+      @include md {
+         flex-direction: column;
+         align-items: center;
+      }
+   }
+
+   &__item{
+      box-sizing: border-box;
+   }
+
+   &__title{
+      text-align: left;
+
+      @include lg {
+         font-size: 40px;
+      }
+
+      @include md {
+         text-align: center;
+      }
+   }
+}
+
+.how-it-works{
+   margin-top: 100px;
+   display: flex;
+   flex-direction: column;
+   gap: 50px;
+   max-width: 435px;
+
+   @include md {
+      margin-top: 50px;
+   }
+
+   &__item{
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+   }
+
+   &__title{
+      @include lg {
+         font-size: 28px;
+      }
+      
+      
+   }
+}
+
+.can-benefit{
+   display: flex;
+   gap: 35px;
+   align-items: flex-start;
+   flex-wrap: wrap;
+   padding-left: 40px;
+   padding-block: 47px;
+   border-left: 1px solid #7B68EE;
+   margin-top: 72px;
+   max-width: 615px;
+
+   @include lg {
+      padding-left: 30px;
+      gap: 25px;
+   }
+
+   @include md {
+      padding-left: 0;
+      border-left-width: 0
+   }
+
+   @include sm {
+      padding-block: 0;
+      justify-content: center;
+   }
+
+   &__item{
+      position: relative;
+      text-align: center;
+      box-sizing: border-box;
+      width: 44.2%;
+      padding: 20px 35px 10px;
+      border-radius: 30px;
+      box-shadow: 0px 10px 25px 0px rgba(123, 104, 238, 0.3);
+
+      @include sm {
+         position: static;
+         width: 308px;
+      }
+      
+      &:nth-child(odd){
+         top: -47px;
+      }
+
+      &:nth-child(even){
+         top: 47px;
+      }
+
+      &--1{
+         background: #b6acf6; 
+      }
+
+      &--2{
+         background: #A395F3;
+      }
+
+      &--3{
+         background: #8F7FF1;
+      }
+
+      &--4{
+         background: #7B68EE;
+      }
+   }
+}

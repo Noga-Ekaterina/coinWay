@@ -1,0 +1,344 @@
+@import "../index";
+@import "../UI/hero-block";
+@import "../UI/btn-gradient";
+@import "../UI/you-ready";
+
+main{
+   gap: 70px;
+}
+
+.dashboard{
+   padding: 0 36px 36px;
+   position: relative;
+
+   &__bg{
+      position: absolute;
+      top: calc(100% - 36px);
+   }
+
+   &__img-min{
+      width: 55%;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+   }
+}
+
+.solutions{
+   padding-top: 30px;
+
+   &__title{
+      max-width: 780px;
+      margin-inline: auto;
+   }
+   &__row{
+      margin-top: 70px;
+      width: 100%;
+      align-items: stretch;
+
+      @include md {
+         align-items: center;
+      }
+   }
+   &__text{ 
+      width: 42.5%;
+      max-width: 510px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      @include md {
+         width: 100%;
+      }
+   }
+
+   &__imgs{
+      $mr: calc((100vw - 100%) / 2);
+      position: relative;
+      width: 590px;
+      right: max(calc($mr * -1), -160px);
+
+      @include lg {
+         width: 48%;
+      }
+
+      @include md {
+         width: 77%;
+         align-self: flex-end;
+         right: 0;
+      }
+
+      &::before{
+         content: '';
+         border-radius: 14px;
+         box-shadow: 0px 3px 20px 0px rgba(67, 46, 134, 0.1);
+         background: linear-gradient(237.05deg, rgb(250, 18, 227) 17.39%,rgb(118, 18, 250) 64.22%,rgb(18, 208, 250) 97.73%);
+         position: absolute;
+         top: -20px;
+         bottom: 50px;
+         left: -20px;
+         right: 0;
+         z-index: 1;
+      }
+   }
+
+   &__img-big{
+      position: relative;
+      z-index: 2;
+   }
+
+   &__img-min{
+      width: 60%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: -30%;
+      z-index: 3;
+   }
+}
+
+.coins{
+   background: url(../../images/coins-bg.png) no-repeat center;
+   text-align: center;
+   padding-block: 35px 90px;
+
+   @include md {
+      background-size: cover;
+   }
+
+   &__row{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+   }
+
+   &__item{
+      width: 7.6%;
+      position: relative;
+   
+      &--3, &--6{
+         top: 15px;
+
+         @include md {
+            top: 10px;
+         }
+      }
+
+      &--2, &--7{
+         top: 30px;
+
+         @include md {
+            top: 20px;
+         }
+      }
+
+      &--1, &--8{
+         top: 45px;
+
+         @include md {
+            top: 20px;
+         }
+      }
+   }
+}
+
+.everything-looking-for{
+   &__text{
+      max-width: 630px;
+      margin: 20px auto 60px;
+      text-align: center;
+   }
+
+   &__grid{
+      display: grid;
+      grid-template-columns: repeat(14, 1fr);
+      max-width: 1060px;
+      margin-inline: auto;
+
+      @include sm {
+         display: flex;
+         flex-direction: column;
+      }
+   }
+   &__item{
+      padding: 30px;
+      border-radius: 12px;
+      position: relative;
+      
+      @include sm {
+         position: static;
+      }
+
+      &--1{
+         background: linear-gradient(195.88deg, rgb(220, 106, 232) 0.679%,rgb(60, 15, 157) 61.594%,rgb(53, 11, 154) 74.07%);
+         grid-column: 1/ span 5;
+
+         @include md {
+            grid-column: 1/ span 6;
+         }
+      }
+
+      &--2{
+         background: linear-gradient(184.73deg, rgb(220, 106, 232) -34.459%,rgb(60, 15, 157) 67.23%,rgb(53, 11, 154) 88.058%);
+         grid-column: 10/ span 5;
+         top: -10px;
+
+         @include md {
+            grid-column: 9/ span 6;
+         }
+      }
+
+      &--3{
+         background: linear-gradient(183.11deg, rgb(220, 106, 232) 8.413%,rgb(60, 15, 157) 98.39%,rgb(53, 11, 154) 116.819%);
+         grid-row: 2/ span 1;
+         grid-column: 5/ span 5;
+         top: -46px;
+         right: -10px;
+
+         @include md {
+            grid-column: 5/ span 6;
+            top: -26px;
+         }
+
+         @include sm {
+            order: -1;
+         }
+      }
+      
+      &--4{
+         background: linear-gradient(166.63deg, rgb(220, 106, 232) -14.92%,rgb(60, 15, 157) 60.879%,rgb(53, 11, 154) 76.404%);
+         grid-row: 3/ span 1;
+         grid-column: 2/ span 5;
+         top: -56px;
+         left: -8%;
+
+         @include md {
+            grid-column: 1/ span 6;
+            top: -36px;
+            left: 0;
+         }
+
+         @include sm {
+            background: linear-gradient(190.63deg, rgb(220, 106, 232) -14.92%,rgb(60, 15, 157) 60.879%,rgb(53, 11, 154) 76.404%);
+         }
+      }
+
+      &--5{
+         background: linear-gradient(160.41deg, rgb(220, 106, 232) -31.71%,rgb(60, 15, 157) 53.829%,rgb(53, 11, 154) 71.349%);
+         grid-row: 3/ span 1;
+         grid-column: 9/ span 5;
+         top: -100px;
+         right: -3%;
+
+         @include md {
+            grid-column: 9/ span 6;
+            top: -56px;
+            right: 0;
+         }
+
+         @include sm {
+            background: linear-gradient(185.41deg, rgb(220, 106, 232) -31.71%,rgb(60, 15, 157) 53.829%,rgb(53, 11, 154) 71.349%);
+         }
+      }
+
+      &-text{
+         width: 90%;
+         font-size: 16px;
+         font-weight: 500;
+         margin-top: 18px;
+
+         @include md {
+            width: 95%;
+         }
+      }
+   }
+}
+
+.upgrade-business{
+   &__items{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin-inline: auto;
+      margin-top: 40px;
+      row-gap: 20px;
+   }
+
+   &__item{
+      $bg: #fff;
+
+      box-sizing: border-box;
+      padding: 40px;
+      border-radius: 13px;
+      position: relative;
+
+      &--1{
+         background: rgba($color: $bg, $alpha: 0.07);
+         width: 32.5%;
+        
+         @include sm {
+            width: 100%;
+         }
+      }
+
+      &--2{
+         background: rgba($color: $bg, $alpha: 0.05);
+         width: 57%;
+         
+         @include sm {
+            width: 100%;
+         }
+      }
+
+      &--3{
+         width: 52%;
+         padding-right: 0;
+         
+         @include sm {
+            width: 100%;
+            padding-right: 40px;
+         }
+      }
+   }
+
+   &__text{
+      font-size: 16px;
+      margin-top: 20px;
+   }
+
+   &__list-item{
+      font-size: 16px;
+      margin-top: 20px;
+      list-style: none;
+
+      &::before{
+         content: '\2713';
+         border: 2px solid #fff;
+         border-radius: 50%;
+         display: inline-flex;
+         width: 16px;
+         height: 16px;
+         justify-content: center;
+         align-items: center;
+         margin-right: 8px;
+      }
+   }
+
+   &__img{
+      width: 48%;
+      position: relative;
+      left: -1%;
+      right: -1%;
+
+      @include md {
+         align-self: center;
+      }
+
+      @include sm {
+         width: 100%;
+      }
+   }
+}

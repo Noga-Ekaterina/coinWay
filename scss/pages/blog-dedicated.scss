@@ -1,0 +1,27 @@
+@import "../index";
+
+main{
+   gap: 20px;
+   padding-bottom: 29px;
+   border-bottom: 1px solid #fff;
+}
+
+.blog-body{
+   padding-inline: 20px;
+
+   *:not(.blog-title, .blog-body__title){
+      font-size: 16px;
+      font-family: "inter";
+      color: #C0C5D0;
+   }
+
+   ul, ol{
+      padding-left: 2ch;
+   }
+
+   &__title{
+      padding-block: 10px;
+      color: #fff;
+      border-block: 1px solid #fff;
+   }
+}

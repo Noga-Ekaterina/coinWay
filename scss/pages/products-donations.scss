@@ -1,0 +1,87 @@
+@import "../index";
+@import "../UI/hero-block";
+@import "../UI/btn-gradient";
+@import "../UI/you-ready";
+@import "../UI/card";
+
+.donations{
+   &-card{
+      &__row{
+         column-gap: 25px;
+      }
+
+      &__block-text{
+         flex-shrink: 1;
+         max-width: 470px;
+      }
+   }
+
+   &-banner{
+      &__title{
+         margin-bottom: 35px;
+      }
+
+      &__btn{
+         display: block;
+         width: fit-content;
+         margin-top: 44px;
+
+         @include md {
+            margin-inline: auto;
+         }
+
+         @include sm {
+            font-size: 20px;
+         }
+      }
+   }
+}
+
+.banner-platforms{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   margin-top: 80px;
+
+   @include lg {
+      gap: 30px;
+      justify-content: center;
+   }
+
+   &__item{
+      width: 360px;
+      border-radius: 15px;
+      background: linear-gradient(180.00deg, rgba(220, 106, 232, 0.4),rgba(60, 15, 157, 0.4) 83%,rgba(53, 11, 154, 0.4) 100%);
+      padding-top: 47px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: start;
+      justify-content: center;
+      gap: 40px;
+   }
+
+   &__img{
+      width: 41.7%;
+      aspect-ratio: 50/19;
+      display: flex;
+      align-items: center;
+   }
+
+   &__text{
+      width: 85%;
+   }
+
+   &__btn{
+      width: 100%;
+      align-self: flex-end;
+      text-align: center;
+      padding-block: 10px;
+      border-top: 1px solid #fff;
+
+      &::after {
+         content: "\2192";
+         color: #9B51E0;
+         margin-left: 5px;
+      }
+   }
+}

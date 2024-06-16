@@ -1,0 +1,59 @@
+@import "../index";
+@import "../UI/hero-block";
+@import "../UI/btn-gradient";
+@import "../UI/you-ready";
+@import "../UI/card";
+
+.telegram-bot{
+   @include md {
+      padding-inline: 35px;
+   }
+   &__row{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      margin-block: 85px 50px;
+
+      @include sm {
+         justify-content: center;
+      }
+   }
+
+   &__item{
+      box-sizing: border-box;
+      width: 360px;
+      padding: 36px 15px;
+      border-radius: 15px;
+      box-shadow: 0px 10px 25px 0px rgba(73, 204, 249, 0.1);
+      background: linear-gradient(196.36deg, rgba(220, 106, 232, 0.2) 60.525%,rgba(60, 15, 157, 0.2) 94.08%,rgba(53, 11, 154, 0.2) 111.789%);
+
+      @include md {
+         width: 318px;
+      }
+   }
+
+   &__title{
+      font-size: 25px;
+      margin-bottom: 8px;
+
+      @include md {
+         font-size: 22px;
+      }
+
+      @include sm {
+         font-size: 20px;
+      }
+   }
+
+   &__btn{
+      margin-inline: auto;
+      display: block;
+      box-sizing: border-box;
+      width: 360px;
+      
+      @include md {
+         width: 318px;
+      }
+   }
+}

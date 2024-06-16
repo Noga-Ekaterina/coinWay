@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import "media";
+@import 'UI/header';
+@import 'UI/footer';
+
+*{
+   margin: 0;
+   padding: 0;
+}
+
+body{
+   font-size: 18px;
+   font-family: "Space Grotesk";
+   background: #000;
+   background-image: url(../images/bg.png);
+   color: #fff;
+   overflow-x: hidden;
+   
+   @include md {
+      background-size: contain;
+   }
+
+   @include sm {
+      min-width: 360px;
+      overflow: auto;
+      padding-inline: 10px;
+   }
+}
+
+a{
+   color: #fff;
+   text-decoration: none;
+   box-sizing: border-box;
+}
+
+button{
+   border: 0;
+   background: transparent;
+   color: inherit;
+   font-size: inherit;
+   cursor: pointer;
+}
+
+.container{
+   box-sizing: border-box;
+   width: 100%;
+   max-width: 1300px;
+   margin-inline: auto;
+
+   @include lg {
+      max-width: 960px;
+   }
+
+   @include md {
+      max-width: 740px;
+   }
+
+   @include sm {
+      max-width: 550px;
+   }
+}
+
+main{
+   display: flex;
+   flex-direction: column;
+   gap: 48px;
+}
+
+img:not(.header img, .footer img){
+   width: 100%;
+}
+
+.ff-inter{
+   font-family: Inter;
+}
+
+.title{
+   &-1{
+      font-size: 64px;
+      margin-bottom: 20px;
+      text-align: center;
+
+      @include sm {
+         font-size: 40px;
+      }
+   }
+
+   &-2{
+      font-size: 48px;
+      text-align: center;
+
+      @include sm {
+         font-size: 32px;
+      }
+   }
+   
+   &-3{
+      font-size: 36px;
+
+      @include sm {
+         font-size: 26px;
+      }
+   }
+
+   &-4{
+      font-size: 20px;
+      font-weight: 800;
+   }
+}
+
+.main-text{
+   font-weight: 500;
+   line-height: 29px;
+
+   &--gray{
+      color: #BCC5D6;
+   }
+}
+
+.text-and-img{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+   box-sizing: border-box;
+
+   &--img-left{
+      flex-direction: row-reverse;
+   }
+
+   
+   &__title{
+      text-align: start;
+      
+      @include md {
+         text-align: center;
+      }
+   }
+   
+   @include md {
+      flex-direction: column-reverse;
+      gap: 15px;
+      text-align: center;
+   }
+}
+
+.blog-title{
+   font-size: 24px;
+   font-weight: 600;
+   font-family: "inter";
+   color: #fff;
+}

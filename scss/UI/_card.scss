@@ -1,0 +1,91 @@
+.card{
+   border-radius: 60px;
+   padding: 124px 80px 80px;
+   background: linear-gradient(180.00deg, rgba(220, 106, 232, 0.2),rgba(60, 15, 157, 0.2) 83%,rgba(53, 11, 154, 0.2) 100%);
+
+   @include sm {
+      padding-inline: 25px;
+   }
+   
+   &__block-text{
+      max-width: 408px;
+   }
+
+   &__title{
+      margin-bottom: 44px;
+
+      @include lg {
+         margin-bottom: 30px;
+      }
+
+      &::after{
+         content: '';
+         display: block;
+         width: 100px;
+         height: 5px;
+         border-radius: 5px;
+         background: linear-gradient(180.00deg, rgb(220, 106, 232),rgb(60, 15, 157) 83%,rgb(53, 11, 154) 100%);
+         margin-top: 8px;
+
+         @include md {
+            margin-inline: auto;
+         }
+      }
+   }
+
+   &__img{
+      width: 53%;
+
+      @include md {
+         width: 100%;
+         max-width: 500px;
+      }
+
+      &--bg{
+         position: relative;
+
+         img{
+            position: relative;
+            z-index: 2;
+         }
+
+         &::after{
+            content: '';
+            position: absolute;
+            z-index: 1;
+            border-radius: 20px;
+            background: linear-gradient(258.69deg, rgb(250, 18, 227) 8.327%,rgb(118, 18, 250) 53.184%,rgb(18, 208, 250) 93.256%);
+            opacity: 0.3;
+            width: 31.25%;
+            aspect-ratio:1/1;
+         }
+
+         &-bottom-left::after{
+            bottom: -60px;
+            left: -17%;
+
+            @include md {
+               bottom: -30px;
+            }
+         }
+
+         &-top-right::after{
+            top: -50px;
+            right: -8.5%;
+
+            @include md {
+               top: -25px;
+            }
+         }
+      }
+   }
+
+   &--img-left &__img{
+      width: 55.79%;
+      
+      @include md {
+         width: 100%;
+         max-width: 500px;
+      }
+   }
+}

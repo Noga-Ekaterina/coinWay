@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap'); 
+@import "../index";
+@import "../UI/hero-block";
+@import "../UI/btn-gradient";
+@import "../UI/you-ready";
+@import "../UI/card";
+
+.pricing{
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   row-gap: 40px;
+
+   @include lg {
+      justify-content: space-evenly;
+   }
+
+   *{
+      font-family: 'DM Sans';
+   }
+
+   &__item{
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      box-sizing: border-box;
+      width: 394px;
+      padding: 40px;
+      color: #000;
+      border: 1px solid rgb(239, 240, 247);
+      border-radius: 24px;
+      box-shadow: 0px 2px 12px 0px rgba(20, 20, 43, 0.08);
+      background: rgb(255, 255, 255);
+      
+      &--dark{
+         background: linear-gradient(180.00deg, rgba(220, 106, 232, 0.2),rgba(60, 15, 157, 0.2) 83%,rgba(53, 11, 154, 0.2) 100%);
+         color: #fff;
+
+         @include lg {
+            order: 1;
+         }
+
+         @include md {
+            order: 0;
+         }
+      }
+   }
+
+   &__header{
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      text-wrap: nowrap;
+   }
+
+   &__img{
+      width: 72px;
+   }
+
+   &__popular{
+      font-size: 14px;
+      padding: 12px 24px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      position: relative;
+      top: -12px;
+      right: -8px;
+   }
+   
+   &__price{
+      font-size: 54px;
+      display: flex;
+
+      &::before{
+         content: "$";
+      }
+
+      &::after{
+         content: "/monthly";
+         font-size: 20px;
+         align-self: flex-end;
+         position: relative;
+         top: -10px;
+      }
+   }
+   &__list{
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      &-item{
+         list-style: none;
+
+         &::before{
+            content: '\2713';
+            color: #fff;
+            border-radius: 50%;
+            display: inline-flex;
+            width: 26px;
+            height: 26px;
+            background: #4A3AFF;
+            justify-content: center;
+            align-items: center;
+            margin-right: 8px;
+         }
+         
+         &--light::before{
+            background: #fff;
+            color: #4A3AFF;
+         }
+      }
+   }
+
+   &__btn{
+      text-align: center;
+      border-radius: 96px;
+      background: linear-gradient(180.00deg, rgb(220, 106, 232),rgb(60, 15, 157) 83%,rgb(53, 11, 154) 100%);
+      color: #fff;
+      font-weight: 700;
+      padding: 26px;
+
+      &::after {
+         content: "\2192";
+         font-size: 20px;
+         margin-left: 5px;
+      }
+
+      &--light{
+         background: #fff;
+         color: #be3bee;
+      }
+   }
+}

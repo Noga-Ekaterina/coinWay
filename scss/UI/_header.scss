@@ -1,0 +1,153 @@
+.header{
+   margin-bottom: 50px;
+   padding-block: 16px;
+   border-bottom: 1px solid #EAEEF3;
+   
+   &__row{   
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      >*{
+         display: flex;
+         gap: 35px;
+
+         @include lg {
+            column-gap: 22px;
+         }
+      }
+   }
+
+   &__menu{
+      @include md {
+         display: none;
+      }
+
+      &-item{
+         font-weight: 700;
+      }
+   }
+
+   &__btns{
+      align-self: stretch;
+      align-items: stretch;
+   }
+
+   &__label{
+      font-size: 14px;
+      align-self: center;
+      
+      @include sm {
+         margin-right: 6px;
+      }
+
+      &--md{
+         @include sm {
+            display: none;
+         }
+      }
+   }
+
+   &__btn{
+      padding: 12px 24px;
+      border-radius: 100px;
+      color: #000;
+      background: #fff;
+
+      @extend .header__menu-item;
+
+      &--md{
+         @include sm {
+            display: none;
+         }
+      }
+   }
+
+   &__open-menu{
+      display: none;
+
+      @include md {
+         display: block;
+      }
+   }
+}
+
+.dropdown{
+   position: relative;
+   
+   &__title::after{
+      content: '';
+      display: inline-block;
+      width: 16px;height: 16px;
+      background-image: url(../../images/cheveron-down.svg);
+      margin-left: 6px;
+      position: relative;
+      top: 3px;
+      
+      .dropdown--open & {
+         transform: rotate(180deg);
+      }
+   }
+
+   &__content{
+      position: absolute;
+      top: calc(100% + 20px);
+      overflow: hidden;
+      height: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-sizing: border-box;
+      padding: 0 20px;
+      background: #fff;
+
+      .dropdown--open & {
+         height: auto;
+         padding: 28px;
+
+         @include md {
+            padding-block: 15px 0;
+         }
+      }
+
+      @include md {
+         position: static;
+         background: transparent;
+      }
+
+      *{
+         color: #000;
+
+         @include md {
+            color: #fff;
+         }
+      }
+   }
+}
+
+.mob-menu{
+   overflow: auto;
+   position: fixed;
+   z-index: 4;
+   width: 360px;
+   box-sizing: border-box;
+   padding: 30px;
+   height: 100vh;
+   background: #1f1f23;
+   top: 0;
+   right: -390px;
+   transition: 0.4s;
+   flex-direction: column;
+   -webkit-box-shadow: -33px -1px 30px 0px rgba(0, 0, 0, 0.43);
+   -moz-box-shadow: -33px -1px 30px 0px rgba(0, 0, 0, 0.43);
+   box-shadow: -33px -1px 30px 0px rgba(0, 0, 0, 0.43);
+
+   &--open{
+      right: 0;
+   }
+
+   &__header{
+      display: flex;
+      justify-content: space-between;
+   }
+}

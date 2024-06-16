@@ -1,0 +1,160 @@
+@import "../index";
+@import "../UI/card";
+
+.header{
+   margin-bottom: 0;
+   
+   &__btns{
+      order: 1;
+      
+      @include sm {
+         display: block;
+
+         &:has(+.search .search__input:focus){
+            display: none;
+         }
+      }
+   }
+   &__open-menu{
+      @include md {
+         display: none;
+      }
+
+      @include sm {
+         display: block;
+      }
+   }
+}
+
+.search{
+   width: 477px;
+   box-sizing: border-box;
+   padding: 12px;
+   background: #fff;
+   border-radius: 30px;
+   overflow: hidden;
+
+   @include md {
+      width: 200px;
+   }
+
+   @include sm {
+      width: fit-content;
+   }
+
+   &__input{
+      width: 100%;
+      border: none;
+
+      @include sm {
+         width: 0;
+         position: absolute;
+      }
+      
+      &:focus{
+         position: relative;
+         width: 100%;
+         border: none;
+         outline: none;
+      }
+   }
+   
+   &::after{
+      content: url(../../images/search.png);
+   }
+}
+
+.api-body{
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   gap: 15px;
+
+   &__wrap{
+      max-width: 934px;
+      padding-top: 40px;
+   }
+   
+   &__main{
+      width: 100%;
+      gap: 20px;
+      
+      p, li{
+         padding-bottom: 6px;
+      }
+   }
+   
+   &__aside{
+      position: sticky;
+      height: 100vh;
+      top: 10px;
+      border-radius: 0;
+      padding-block: 40px;
+      box-sizing: border-box;
+      max-width: 330px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      text-wrap: nowrap;
+
+      @include lg {
+         padding-inline: 30px;
+      }
+
+      &-summary{
+         list-style: none;
+         width: 100%;
+         display: flex;
+         justify-content: space-between;
+
+         &::after{
+            content: '';
+            display: inline-block;
+            width: 16px;height: 16px;
+            background-image: url(../../images/cheveron-down.svg);
+            margin-left: 15px;
+            position: relative;
+            top: 3px;
+            
+            [open] & {
+               transform: rotate(180deg);
+            }
+         }
+      }
+
+      &-detalis{
+         display: flex;
+         flex-direction: column;
+         gap: 15px;
+         padding-top: 15px;
+         padding-left: 15px;
+      }
+
+      *{
+         font-size: 16px;
+      }
+   }
+
+   &__patch{
+      font-weight: 700;
+   }
+
+   &__card{
+      padding-block: 40px;
+
+      @include md {
+         padding-inline: 30px;
+      }
+   }
+
+   &__list{
+      padding-left: 2ch;
+   }
+
+   &__line{
+      width: 100%;
+      height: 5px;
+      border-radius: 5px;
+      background: linear-gradient(180.00deg, rgb(220, 106, 232),rgb(60, 15, 157) 83%,rgb(53, 11, 154) 100%);
+   }
+}

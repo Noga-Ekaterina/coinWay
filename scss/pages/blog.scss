@@ -1,0 +1,167 @@
+@import "../index";
+@import "../UI/card";
+
+main{
+   padding-inline: 20px;
+}
+
+.blog-item{
+   display: flex;
+   gap: 20px;
+   justify-content: space-between;
+   flex-direction: column;
+
+   &--w100{
+      flex-direction: row;
+
+      @include sm {
+         flex-direction: column;
+      }
+
+      >*{
+         width: 48%;
+
+         @include sm {
+            width: 100%;
+         }
+      }
+   }
+
+   *{
+      font-family: "inter";
+   }
+
+   &__block-text{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+   }
+   &__data{
+      font-size: 14px;
+   }
+   
+   &__title{
+      display: flex;
+      justify-content: space-between;
+
+      &::after{
+         content: url(../../images/arr-link.png);
+      }
+   }
+   &__text{
+      font-size: 16px;
+   }
+}
+
+.coinWay-blog{
+   display: flex;
+   justify-content: space-between ;
+              
+   @include lg {
+      flex-direction: column;
+      gap: 40px;
+   }
+
+   &__item{
+      width: 48%;
+
+      @include lg {
+         width: 100%;
+      }
+
+      &-small{
+         flex-direction: row;
+
+         @include lg {
+            width: 48%;
+            flex-direction: column;
+         }
+
+         @include sm {
+            width: 100%;
+         }
+
+         >*{
+            width: 48%;
+
+            @include lg {
+               width: 100%;
+            }
+         }
+      }
+   }
+
+   &__items{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 40px;
+      gap: 3 0px;
+      
+      @include lg {
+         flex-direction: row;
+         padding-bottom: 0; 
+      }
+
+      @include sm {
+         flex-direction: column;
+      }
+   }
+}
+
+.all-posts{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   gap: 50px 30px;
+
+   &__item{
+      max-width: 384px;
+
+      @include md {
+         max-width: 330px;
+      }
+
+      @include sm {
+         max-width: 100%;
+      }
+   }
+}
+
+.navigution{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 15px 30px; 
+   padding-top: 20px;
+   border-top: 1px solid #fff;
+
+   @include sm {
+      justify-content: center;
+   }
+}
+
+.pagination{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   @include sm {
+      order: 1;
+      width: 100%;
+   }
+
+   &__item{
+      padding: 5px;
+   
+      &--active, &:hover{
+         background: #fff;
+         color: #000;
+      }
+
+      &--hidden{
+         display: none;
+      }
+   }
+}

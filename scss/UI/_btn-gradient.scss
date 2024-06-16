@@ -1,0 +1,16 @@
+.btn-gradient{
+   color: #fff;
+   font-size: 23px;
+   text-wrap: nowrap;
+   border: 0;
+   border-radius: 12px;
+   box-shadow: 0px 4px 4px 0px rgba(87, 75, 172, 0.15);
+   background: linear-gradient(90.00deg, rgb(220, 106, 232),rgb(60, 15, 157) 83%,rgb(53, 11, 154) 100%);
+   padding: 18px 42px;
+   text-align: center;
+
+   &::after {
+      content: "\2192";
+      margin-left: 5px;
+   }
+}

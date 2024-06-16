@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+
+   <link rel="stylesheet" href="css/solutions-api.css">
+</head>
+<body>
+   <header class="header" id="top">
+      <div class="container header__row">
+         <a href="/" class="logo"><img src="images/logo.png" alt=""></a>
+         
+         <div class="header__btns">
+            <a class="header__btn header__btn--md">Log in</a>
+            <a href="registration.html" class="header__btn header__btn--md">Sign up</a>
+            <button class="header__open-menu" id="open-mob-menu"><img src="images/open-menu.svg" alt=""></button>
+         </div>
+
+         <label class="search" for="search">
+            <input type="text" class="search__input" placeholder="Search" id="search">
+         </label>
+
+         <div class="header__mob-menu mob-menu" id="mob-menu">
+            <div class="mob-menu__header">
+               <a href="/" class="logo"><img src="images/logo.png" alt=""></a>
+               <button class="header__close-menu" id="mob-menu__close"><img src="images/close .png" alt=""></button>
+            </div>
+            <div class="header__dropdown dropdown">
+               <button class="dropdown__title header__menu-item">Products</button>
+               <div class="dropdown__content">
+                  <a href="products-wallet.html">Wallet</a>
+                  <a href="products-payments-in-crypto.html">Payments in Crypto</a>
+                  <a href="products-invoices.html">Invoices</a>
+                  <a href="products-donations.html">Donations</a>
+                  <a href="products-notifications.html">Notifications</a>
+               </div>
+            </div>
+            <a href="pricing.html" class="header__menu-item">Pricing</a>
+            <div class="header__dropdown dropdown">
+               <button class="dropdown__title header__menu-item">Solutions</button>
+               <div class="dropdown__content">
+                  <a href="solutions-api.html">API</a><a href="solutions-plugins.html">Plugins</a>
+               </div>
+            </div>
+            <a href="blog.html" class="header__menu-item">Blog</a>
+            <a href="" class="header__menu-item">Demo</a>
+            <div class="header__btns">
+               <a class="header__btn">Log in</a>
+               <a href="registration.html"  class="header__btn">Sign up</a>
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <section class="container api-body">
+      <aside class="card api-body__aside">
+         <p class="api-body__aside-title main-text main-text--gray">Introduction</p>
+         <a href="" class="api-body__aside-item">Main</a>
+         <details>
+            <summary class="api-body__aside-item api-body__aside-summary">Getting started</summary>
+            <div class="api-body__aside-detalis">
+               <a href="">Getting API keys</a>
+               <a href="">Request format</a>
+            </div>
+         </details>
+         <p class="api-body__aside-title main-text main-text--gray">Methods</p>
+         <details>
+            <summary class="api-body__aside-item api-body__aside-summary">Payments</summary>
+            <div class="api-body__aside-detalis">
+               <a href="">Getting started</a>
+               <a href="">Creating an invoice</a>
+               <a href="">Creating a wallet</a>
+            </div>
+         </details>
+         <a href="" class="api-body__aside-item">Payouts</a>
+
+      </aside>
+      <div class="api-body__wrap">
+         <main class="api-body__main">
+            <p class="api-body__patch">Payments / Getting started</p>
+            <div class="card api-body__card">
+               <p>There are 2 types of integration</p>
+               <p>Invoice</p>
+               <ol class="api-body__list">
+                  <li>This payment method is suitable for paying for goods with a specific amount.</li>
+                  <li>You can specify the currency, then the payer can select the cryptocurrency and network on the payment page.You can also specify the crypto-currency and network immediately, then a crypto-currency address will be generated and you can give it to the client.</li>
+                  <li>Once the client has paid, you will receive a notification - a webhook, which indicates the status, the payment amount and hash, as well as additional data (more details - Link )
+                  </li>
+                  <li>If the client didn’t pay, you will receive the cancel status.If the client sent the exact amount, you will receive a paid status.If the client sent a lower amount, you will receive the wrong_amount status.If the client sent a higher amount, you will receive the paid_over status.</li>
+                  <li>To allow the client to pay the rest, pass the parameter is_payment_multiple = true</li>
+                  <li>On the payment page, the client will be notified that there is a surcharge to be paid. If the client doesn't pay the rest of an amount, you will receive a webhook with the wrong_amount status, when the invoice expires.</li>
+               </ol>
+               <p>Static wallet</p>
+               <ol class="api-body__list">
+                  <li>Suitable for balance top-up</li>
+                  <li>You can create a static address in a specific currency and network. The address will be attached to the order_id</li>
+                  <li>All transactions sent to this address will be credited regardless of the amount.</li>
+               </ol>
+            </div>
+            <div class="api-body__line"></div>
+            <div class="card api-body__card">
+               <p>
+                  This payment method is suitable for paying for goods with a specific amount.
+                  You can specify the currency, then the payer can select the cryptocurrency and network on the payment page.You can also specify the crypto-currency and network immediately, then a crypto-currency address will be generated and you can give it to the client.</p>
+            </div>
+            <div class="api-body__line"></div>
+            <div class="card api-body__card">
+               <p>There are 2 types of integration</p>
+               <p>Invoice</p>
+               <ol class="api-body__list">
+                  <li>This payment method is suitable for paying for goods with a specific amount.</li>
+                  <li>You can specify the currency, then the payer can select the cryptocurrency and network on the payment page.You can also specify the crypto-currency and network immediately, then a crypto-currency address will be generated and you can give it to the client.</li>
+                  <li>Once the client has paid, you will receive a notification - a webhook, which indicates the status, the payment amount and hash, as well as additional data (more details - Link )
+                  </li>
+                  <li>If the client didn’t pay, you will receive the cancel status.If the client sent the exact amount, you will receive a paid status.If the client sent a lower amount, you will receive the wrong_amount status.If the client sent a higher amount, you will receive the paid_over status.</li>
+                  <li>To allow the client to pay the rest, pass the parameter is_payment_multiple = true</li>
+                  <li>On the payment page, the client will be notified that there is a surcharge to be paid. If the client doesn't pay the rest of an amount, you will receive a webhook with the wrong_amount status, when the invoice expires.</li>
+               </ol>
+               <p>Static wallet</p>
+               <ol class="api-body__list">
+                  <li>Suitable for balance top-up</li>
+                  <li>You can create a static address in a specific currency and network. The address will be attached to the order_id</li>
+                  <li>All transactions sent to this address will be credited regardless of the amount.</li>
+               </ol>
+            </div>
+         </main>
+
+         <footer class="footer footer--small">© 2024 CoinWay, Inc. All Rights Reserved.</footer>
+      </div>
+   </section>
+   <script src="scripts/index.js"></script>
+</body>
+</html>
