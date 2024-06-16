@@ -13,7 +13,7 @@
          <a href="/" class="logo"><img src="images/logo.png" alt=""></a>
          
          <div class="header__btns">
-            <a class="header__btn header__btn--md">Log in</a>
+            <a href="login.html" class="header__btn header__btn--md">Log in</a>
             <a href="registration.html" class="header__btn header__btn--md">Sign up</a>
             <button class="header__open-menu" id="open-mob-menu"><img src="images/open-menu.svg" alt=""></button>
          </div>
@@ -55,7 +55,7 @@
    </header>
 
    <section class="container api-body">
-      <aside class="card api-body__aside">
+      <aside class="card api-body__aside" id="aside">
          <p class="api-body__aside-title main-text main-text--gray">Introduction</p>
          <a href="" class="api-body__aside-item">Main</a>
          <details>
@@ -77,6 +77,9 @@
          <a href="" class="api-body__aside-item">Payouts</a>
 
       </aside>
+      <div class="api-body__aside-open" id="aside-btn">
+         <img src="images/cheveron-down.svg" alt="">
+      </div>
       <div class="api-body__wrap">
          <main class="api-body__main">
             <p class="api-body__patch">Payments / Getting started</p>
@@ -131,5 +134,6 @@
       </div>
    </section>
    <script src="scripts/index.js"></script>
+   <script src="scripts/aside.js"></script>
 </body>
 </html>

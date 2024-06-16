@@ -83,7 +83,7 @@
 }
 .dropdown__content {
   position: absolute;
-  top: calc(100% + 20px);
+  top: calc(100% + 24px);
   overflow: hidden;
   height: 0;
   display: flex;
@@ -92,6 +92,7 @@
   box-sizing: border-box;
   padding: 0 20px;
   background: #fff;
+  text-wrap: nowrap;
 }
 .dropdown--open .dropdown__content {
   height: auto;
@@ -427,6 +428,17 @@ img:not(.header img, .footer img) {
   color: #fff;
 }
 
+input {
+  width: 100%;
+  border: none;
+}
+input:focus {
+  position: relative;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
 .card {
   border-radius: 60px;
   padding: 124px 80px 80px;
@@ -560,21 +572,11 @@ img:not(.header img, .footer img) {
     width: fit-content;
   }
 }
-.search__input {
-  width: 100%;
-  border: none;
-}
 @media (max-width: 768px) {
   .search__input {
     width: 0;
     position: absolute;
   }
-}
-.search__input:focus {
-  position: relative;
-  width: 100%;
-  border: none;
-  outline: none;
 }
 .search::after {
   content: url(../../images/search.png);
@@ -598,6 +600,9 @@ img:not(.header img, .footer img) {
   padding-bottom: 6px;
 }
 .api-body__aside {
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  overflow: auto;
   position: sticky;
   height: 100vh;
   top: 10px;
@@ -613,6 +618,48 @@ img:not(.header img, .footer img) {
 @media (max-width: 1360px) {
   .api-body__aside {
     padding-inline: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .api-body__aside {
+    position: fixed;
+    z-index: 4;
+    width: 295px;
+    box-sizing: border-box;
+    padding: 30px;
+    height: 100vh;
+    background: #1f1f23;
+    top: 0;
+    left: -325px;
+    transition: 0.4s;
+    flex-direction: column;
+    box-shadow: 33px -1px 30px 0px rgba(0, 0, 0, 0.43);
+  }
+  .api-body__aside--open {
+    left: 0;
+  }
+  .api-body__aside--open + .api-body__aside-open {
+    transform: rotate(90deg);
+    left: 275px;
+    background: linear-gradient(64.95deg, rgb(171, 83, 255) 10.305%, rgb(111, 45, 236) 156.995%);
+  }
+  .api-body__aside-open {
+    transition: left 0.4s;
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: calc(50% - 20px);
+    transform: rotate(-90deg);
+    width: 40px;
+    background: linear-gradient(244.95deg, rgb(171, 83, 255) 10.305%, rgb(111, 45, 236) 156.995%);
+    border: 1px solid rgb(87, 31, 182);
+    box-shadow: 0px 2px 5px 0px rgba(101, 39, 202, 0.8);
+    display: none;
+  }
+}
+@media (max-width: 768px) and (max-width: 768px) {
+  .api-body__aside-open {
+    display: block;
   }
 }
 .api-body__aside-summary {

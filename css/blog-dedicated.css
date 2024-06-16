@@ -83,7 +83,7 @@
 }
 .dropdown__content {
   position: absolute;
-  top: calc(100% + 20px);
+  top: calc(100% + 24px);
   overflow: hidden;
   height: 0;
   display: flex;
@@ -92,6 +92,7 @@
   box-sizing: border-box;
   padding: 0 20px;
   background: #fff;
+  text-wrap: nowrap;
 }
 .dropdown--open .dropdown__content {
   height: auto;
@@ -425,6 +426,17 @@ img:not(.header img, .footer img) {
   font-weight: 600;
   font-family: "inter";
   color: #fff;
+}
+
+input {
+  width: 100%;
+  border: none;
+}
+input:focus {
+  position: relative;
+  width: 100%;
+  border: none;
+  outline: none;
 }
 
 main {

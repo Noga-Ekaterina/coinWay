@@ -150,3 +150,15 @@ img:not(.header img, .footer img){
    font-family: "inter";
    color: #fff;
 }
+
+input{
+   width: 100%;
+   border: none;
+
+   &:focus{
+      position: relative;
+      width: 100%;
+      border: none;
+      outline: none;
+   }
+}

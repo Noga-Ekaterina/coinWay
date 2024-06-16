@@ -43,20 +43,10 @@
    }
 
    &__input{
-      width: 100%;
-      border: none;
-
       @include sm {
          width: 0;
          position: absolute;
-      }
-      
-      &:focus{
-         position: relative;
-         width: 100%;
-         border: none;
-         outline: none;
-      }
+      }      
    }
    
    &::after{
@@ -85,6 +75,8 @@
    }
    
    &__aside{
+      min-width: fit-content;
+      overflow: auto;
       position: sticky;
       height: 100vh;
       top: 10px;
@@ -99,6 +91,51 @@
 
       @include lg {
          padding-inline: 30px;
+      }
+
+      @include sm {
+         position: fixed;
+         z-index: 4;
+         width: 295px;
+         box-sizing: border-box;
+         padding: 30px;
+         height: 100vh;
+         background: #1f1f23;
+         top: 0;
+         left: -325px;
+         transition: 0.4s;
+         flex-direction: column;
+         -webkit-box-shadow: 33px -1px 30px 0px rgba(0, 0, 0, 0.43);
+         -moz-box-shadow: 33px -1px 30px 0px rgba(0, 0, 0, 0.43);
+         box-shadow: 33px -1px 30px 0px rgba(0, 0, 0, 0.43);
+
+         &--open{
+            left: 0;
+
+            & + .api-body__aside-open{
+               transform: rotate(90deg);
+               left: 275px;
+               background: linear-gradient(64.95deg, rgb(171, 83, 255) 10.305%,rgb(111, 45, 236) 156.995%);
+            }
+         }
+
+         &-open{
+            transition: left 0.4s;
+            position: fixed;
+            z-index: 5;
+            left: 0;
+            top: calc(50% - 20px);
+            transform: rotate(-90deg);
+            width: 40px;
+            background: linear-gradient(244.95deg, rgb(171, 83, 255) 10.305%,rgb(111, 45, 236) 156.995%);
+            border: 1px solid rgb(87, 31, 182);
+            box-shadow: 0px 2px 5px 0px rgba(101, 39, 202, 0.8);
+            display: none;
+
+            @include sm {
+               display: block;
+            }
+         }
       }
 
       &-summary{

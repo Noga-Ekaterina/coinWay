@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&family=Space+Grotesk:wght@300..700&display=swap");
 .header {
   margin-bottom: 50px;
@@ -83,7 +84,7 @@
 }
 .dropdown__content {
   position: absolute;
-  top: calc(100% + 20px);
+  top: calc(100% + 24px);
   overflow: hidden;
   height: 0;
   display: flex;
@@ -92,6 +93,7 @@
   box-sizing: border-box;
   padding: 0 20px;
   background: #fff;
+  text-wrap: nowrap;
 }
 .dropdown--open .dropdown__content {
   height: auto;
@@ -425,4 +427,112 @@ img:not(.header img, .footer img) {
   font-weight: 600;
   font-family: "inter";
   color: #fff;
+}
+
+input {
+  width: 100%;
+  border: none;
+}
+input:focus {
+  position: relative;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.header {
+  margin-bottom: 0;
+}
+
+.container-form {
+  width: 480px;
+  max-width: 100%;
+  margin-inline: auto;
+  font-family: "Roboto";
+}
+.container-form__wrap {
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0px 24px 64px 0px rgba(38, 33, 74, 0.1);
+  color: #292D34;
+  background: rgb(255, 255, 255);
+}
+.container-form__title {
+  text-align: center;
+  font-size: 32px;
+}
+.container-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-block: 25px;
+}
+.container-form__input-wrap {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px solid rgb(214, 217, 222);
+  border-radius: 9px;
+  font-size: 14px;
+  margin-top: 8px;
+}
+.container-form__input-wrap--email::before {
+  content: url(../../images/email.svg);
+}
+.container-form__input-wrap--password::before {
+  content: url(../../images/password.svg);
+}
+.container-form__link-password {
+  font-size: 12px;
+  text-wrap: nowrap;
+  color: #7B68EE;
+  align-self: start;
+}
+.container-form label {
+  font-size: 14px;
+  font-weight: 500;
+}
+.container-form__submit {
+  cursor: pointer;
+  padding: 18px;
+  color: #fff;
+  border-radius: 9px;
+  background: rgb(63, 17, 159);
+  font-weight: 800;
+}
+.container-form__google {
+  padding: 11px 14px;
+  display: flex;
+  border: 1px solid rgb(218, 220, 224);
+  border-radius: 4px;
+}
+.container-form__google::before {
+  content: url(../../images/google.svg);
+  position: relative;
+  top: 2px;
+}
+.container-form__google-text {
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  color: #292D34;
+}
+.container-form__text-small {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.4;
+}
+.container-form__link-small {
+  border-bottom: 1px solid #fff;
 }/*# sourceMappingURL=form-page.css.map */
